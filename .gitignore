@@ -3,3 +3,7 @@ workai_env/
 
 # Ignore local environment files
 .env
+.DS_Store
+*.log
+output.json
+results/
