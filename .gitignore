@@ -7,3 +7,7 @@ workai_env/
 *.log
 output.json
 results/
+
+*.swp
+*.swo
+*~
