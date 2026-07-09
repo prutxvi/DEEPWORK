@@ -11,3 +11,8 @@ results/
 *.swp
 *.swo
 *~
+
+*.log
+.tmp
+dist/
+build/
