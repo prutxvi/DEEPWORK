@@ -1,7 +1,4 @@
-.PHONY: run clean
+.PHONY: test
 
-run:
-	python main.py
-
-clean:
-	rm -rf __pycache__ .pytest_cache
+test:
+	pytest
