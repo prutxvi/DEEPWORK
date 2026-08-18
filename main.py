@@ -60,39 +60,40 @@ class WorkAI:
         
         return results
 
-    async def research_query(self, user_query: str) -> str:
-        print(f"🔍 WORKAI Deep Research Starting...")
-        print(f"📝 Query: {user_query}")
+    async def research_query(self, user_query: str, max_layers: int | None = None) -> str:
+        print(f"WORKAI Deep Research Starting...")
+        print(f"Query: {user_query}")
         print("=" * 60)
-        
+
         try:
-            print("1️⃣ Starting browser...")
+            print("1. Starting browser...")
             browser_started = await self.browser.start_browser()
             if not browser_started:
-                return "❌ Failed to start browser. Please try again."
-            
-            print("2️⃣ Creating deep research plan...")
+                return "Failed to start browser. Please try again."
+
+            print("2. Creating deep research plan...")
             search_plan = self.researcher.break_down_query(user_query)
-            
-            print("3️⃣ Conducting multi-layer research...")
+
+            print("3. Conducting multi-layer research...")
             all_results = {}
-            
-            # Research each layer
-            for search_type, terms in search_plan.items():
+
+            layers = list(search_plan.keys()) if max_layers is None else list(search_plan.keys())[:max_layers]
+            for search_type in layers:
+                terms = search_plan.get(search_type, [])
                 if terms:
-                    print(f"\n🔍 Layer: {search_type.upper()}")
+                    print(f"\nLayer: {search_type.upper()}")
                     results = await self.conduct_deep_research(terms, search_type)
                     all_results[search_type] = results
-            
-            print("\n4️⃣ Analyzing contradictions and verifying facts...")
-            verification_results = all_results.get('verification', [])
+
+            print("\n4. Analyzing contradictions and verifying facts...")
+            verification_results = all_results.get("verification", [])
             contradiction_analysis = self.researcher.analyze_contradictions(verification_results)
-            
-            print("5️⃣ Synthesizing comprehensive answer...")
+
+            print("5. Synthesizing comprehensive answer...")
             final_answer = self.researcher.synthesize_comprehensive_answer(
                 user_query, all_results, contradiction_analysis
             )
-            
+
             return final_answer
             
         except Exception as e:
