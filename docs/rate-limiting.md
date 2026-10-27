@@ -1,4 +1,0 @@
-# DEEPWORK Rate Limiting
-
-## Limits
-

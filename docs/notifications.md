@@ -1,4 +1,0 @@
-# DEEPWORK Notifications
-
-## Setup
-

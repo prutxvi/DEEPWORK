@@ -1,4 +1,0 @@
-# DEEPWORK CLI
-
-## Commands
-

@@ -1,6 +1,0 @@
-# DEEPWORK Architecture
-
-## Overview
-
-## Components
-

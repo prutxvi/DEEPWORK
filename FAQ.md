@@ -1,4 +1,0 @@
-# DEEPWORK FAQ
-
-## Getting Started
-

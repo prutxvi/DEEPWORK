@@ -1,4 +1,0 @@
-# DEEPWORK Webhooks
-
-## Events
-

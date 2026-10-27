@@ -1,4 +1,0 @@
-# DEEPWORK Performance
-
-## Benchmarks
-

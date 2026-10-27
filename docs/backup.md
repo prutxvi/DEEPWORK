@@ -1,4 +1,0 @@
-# DEEPWORK Backup
-
-## Strategy
-
